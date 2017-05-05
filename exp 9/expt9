@@ -1,0 +1,31 @@
+#!bin/sh
+max_mem=10 
+max_cpu=10
+while(true)
+do
+	echo -e "SCRIPT is RUNNING\n"
+	ps -e -o pid=,pmem=,pcpu=,user=,comm= --sort=pmem|
+	while read pid size cpu user comm
+	do
+		cmem=0
+		ccpu=0
+		if [ "$user" = "arvsaje+" ]
+		then
+			cmem=$( echo "$size>$max_mem" | bc)
+			ccpu=$( echo "$cpu>$max_cpu" | bc)
+			if [ "$cmem" = "1" ]
+			then
+				echo -e "\nThe process PID:$pid USER:$user COMM:$comm is KILLED due to memory OVERFLOWi\n\n"
+				kill $pid
+			elif [ "$ccpu" = "1" ]
+			then
+				echo -e "i\nThe process PID:$pid USER:$user COMM:$comm is KILLED due to CPU OVERFLOWi\n\n"
+				kill $pid
+			else
+				continue
+			fi
+		fi
+	done
+	sleep 1
+done
+

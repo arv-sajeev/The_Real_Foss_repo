@@ -1,0 +1,20 @@
+# !/bin/sh
+
+
+echo -e "____________OS___DETAILS____"
+echo -e "`cat /etc/os-release`"
+
+echo -e "________-------SHELLS-----_______"
+echo -e "`cat/etc/shells`"
+
+echo -e "__________DEVICE INFORMATION_________"
+echo -e "`xset -q`"
+
+echo -e "___________Memory Info__________"
+echo -e "`cat /proc/meminfo`"
+
+echo -e "____________File Mounted_________"
+echo -e"` cat /proc/mounts`"
+
+
+

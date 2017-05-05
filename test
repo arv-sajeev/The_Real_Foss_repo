@@ -1,0 +1,8 @@
+#!bin/sh
+echo "ENTER the first number"
+read n
+echo "Enter the second number"
+read m
+
+
+

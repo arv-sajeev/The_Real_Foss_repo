@@ -1,0 +1,13 @@
+#!bin/sh
+
+
+echo -e "______________USER NAME __________________\n"
+echo -e "              '$USER'    LOGIN NAME : '$LOGNAME'\n"
+echo -e "___________HOME DIRECTORY_________________\n"
+echo -e "             '$HOME'\n"a
+echo -e "_______________OS TYPE____________________\n"
+uname
+echo -e "_______________PATH NAME___________________\n"
+echo -e "                '$PATH'\n"
+echo -e "_________CURRENT WORKING DIRECTORY_________\n"
+echo -e "                '$PWD'\n"
